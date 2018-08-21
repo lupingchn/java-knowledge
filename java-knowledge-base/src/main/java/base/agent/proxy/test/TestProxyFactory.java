@@ -1,4 +1,4 @@
-package base.agent;
+package base.agent.proxy.test;
 
 import base.agent.proxy.cglib.CGlibProxyFactory;
 import base.agent.proxy.jdk.JDKProxyFactory;
