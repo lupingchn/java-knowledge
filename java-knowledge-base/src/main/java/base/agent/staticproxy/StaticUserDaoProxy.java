@@ -1,5 +1,7 @@
 package base.agent.staticproxy;
 
+import base.agent.origin.IUserDao;
+
 /**
  * 静态代理类，继承接口，实现接口的方法
  * @author zhangluping on 2018/8/21.

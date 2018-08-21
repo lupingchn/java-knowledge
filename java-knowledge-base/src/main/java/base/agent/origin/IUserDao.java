@@ -1,4 +1,4 @@
-package base.agent.staticproxy;
+package base.agent.origin;
 
 /**
  * 接口类
