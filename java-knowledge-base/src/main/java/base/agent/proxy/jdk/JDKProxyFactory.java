@@ -37,4 +37,15 @@ public class JDKProxyFactory {
                 }
         );
     }
+
+    /**
+     * 给目标对象生成代理对象
+     */
+    public Object getProxyInstanceForUser() {
+        return Proxy.newProxyInstance(
+                target.getClass().getClassLoader(),
+                target.getClass().getInterfaces(),
+                new UserInvocationHandler(target)
+        );
+    }
 }

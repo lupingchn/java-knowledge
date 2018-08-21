@@ -2,10 +2,10 @@ package base.agent;
 
 import base.agent.proxy.cglib.CGlibProxyFactory;
 import base.agent.proxy.jdk.JDKProxyFactory;
+import base.agent.proxy.staticagent.StaticUserDaoProxy;
 import base.agent.target.IUserDao;
 import base.agent.target.UserDao;
 import base.agent.target.UserDaoWithoutInterface;
-import base.agent.proxy.staticagent.StaticUserDaoProxy;
 import org.junit.Test;
 
 /**
@@ -36,11 +36,17 @@ public class TestProxyFactory {
         //jdk动态代理
         JDKProxyFactory jdkProxyFactory = new JDKProxyFactory(targetWithInterface);
         // 注意,只能返回接口而不是具体实现类，否则报错，参见testJdkProxyFactoryWithoutInterface方法
-        IUserDao iTarget = (IUserDao) jdkProxyFactory.getProxyInstance();
-        System.out.println("ProxyObj = " + iTarget.getClass().toString());
-        iTarget.save();
+        IUserDao iTarget1 = (IUserDao) jdkProxyFactory.getProxyInstance();
+        System.out.println("ProxyObj = " + iTarget1.getClass().toString());
+        iTarget1.save();
+        IUserDao iTarget2 = (IUserDao) jdkProxyFactory.getProxyInstanceForUser();
+        System.out.println("ProxyObj = " + iTarget2.getClass().toString());
+        iTarget2.save();
     }
 
+    /**
+     * 测试cglib动态代理
+     */
     @Test
     public void testCGlibProxyFactoryWithoutInterface() {
         CGlibProxyFactory cGlibProxyFactory = new CGlibProxyFactory(targetWithoutInterface);
