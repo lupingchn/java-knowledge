@@ -1,6 +1,6 @@
-package base.agent.staticproxy;
+package base.agent.proxy.staticagent;
 
-import base.agent.origin.IUserDao;
+import base.agent.target.IUserDao;
 
 /**
  * 静态代理类，继承接口，实现接口的方法
