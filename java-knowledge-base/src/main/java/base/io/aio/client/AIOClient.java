@@ -1,4 +1,6 @@
-package base.io.aio;
+package base.io.aio.client;
+
+import java.util.Scanner;
 
 /**
  * @author zhangluping on 2018/8/22.
@@ -13,9 +15,10 @@ public class AIOClient {
     }
 
     public static synchronized void start(String ip, int port) {
-        if (clientHandle != null)
+        if (clientHandle != null) {
             return;
-        clientHandle = new AsyncClientHandler(ip, port);
+        }
+        clientHandle = new AIOAsyncClientHandler(ip, port);
         new Thread(clientHandle, "Client").start();
     }
 
@@ -28,9 +31,10 @@ public class AIOClient {
 
     @SuppressWarnings("resource")
     public static void main(String[] args) throws Exception {
-        Client.start();
+        AIOClient.start();
         System.out.println("请输入请求消息：");
         Scanner scanner = new Scanner(System.in);
-        while (Client.sendMsg(scanner.nextLine())) ;
+        while (AIOClient.sendMsg(scanner.nextLine())) {
+        }
     }
 }
