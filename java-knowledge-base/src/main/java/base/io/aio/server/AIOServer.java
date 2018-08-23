@@ -15,8 +15,9 @@ public class AIOServer {
     }
 
     public static synchronized void start(int port) {
-        if (serverHandle != null)
+        if (serverHandle != null) {
             return;
+        }
         serverHandle = new AIOAsyncServerHandler(port);
         new Thread(serverHandle, "Server").start();
     }
