@@ -10,6 +10,7 @@ public class DCLSingleton {
     /**
      * volatile：JVM存在指令重排功能，为防止对象new的过程中并发导致异常问题，具体见后
      */
+    private volatile static DCLSingleton INSTANCE = null;
 
     private DCLSingleton() {
     }
