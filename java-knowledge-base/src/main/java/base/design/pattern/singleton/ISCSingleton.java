@@ -1,7 +1,7 @@
 package base.design.pattern.singleton;
 
 /**
- * 静态内部类模式
+ * 内部静态类模式
  *
  * @author root on 2018/12/20.
  */
