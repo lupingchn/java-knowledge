@@ -11,7 +11,9 @@
     <modules>
         <module>java-knowledge-base</module>
     </modules>
-
+    <properties>
+        <jdk.version>1.8</jdk.version>
+    </properties>
     
     <build>
         <plugins>

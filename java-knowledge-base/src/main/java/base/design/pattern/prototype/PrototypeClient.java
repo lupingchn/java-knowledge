@@ -14,15 +14,15 @@ public class PrototypeClient {
         Character actor = CharacterClient.builderWithDirector();
         log.info("Prototype actor : {}", actor);
         Character copyActor = actor.clone();
-        copyActor.setHairstyle("黑色短发");
+        copyActor.setFace("黑色短发");
         log.info("Prototype copyActor : {}", copyActor);
-        log.info("Prototype actor.costume == copyActor.costume : {}", actor.getCostume() == copyActor.getCostume());
+        log.info("Prototype actor.race == copyActor.race : {}", actor.getRace() == copyActor.getRace());
 
         try {
             Character deepCopyActor = copyActor.deepClone();
-            deepCopyActor.setHairstyle("灰色短发");
+            deepCopyActor.setFace("灰色短发");
             log.info("Prototype deepCopyActor : {}", deepCopyActor);
-            log.info("Prototype deepCopyActor.costume == copyActor.costume : {}", deepCopyActor.getCostume() == copyActor.getCostume());
+            log.info("Prototype deepCopyActor.race == copyActor.race : {}", deepCopyActor.getRace() == copyActor.getRace());
         } catch (Exception e) {
             log.info("Prototype deepCopyActor error : ", e);
         }
