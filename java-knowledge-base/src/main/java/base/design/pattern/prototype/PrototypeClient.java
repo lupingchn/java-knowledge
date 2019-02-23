@@ -1,7 +1,7 @@
 package base.design.pattern.prototype;
 
-import base.design.pattern.builder.Character;
-import base.design.pattern.builder.CharacterClient;
+import base.design.pattern.builder.director.Character;
+import base.design.pattern.builder.director.CharacterClient;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 public class PrototypeClient {
 
     public static void main(String[] args) {
-        Character actor = CharacterClient.builderWithDirector();
+        Character actor = CharacterClient.builderWithDirector("warriorBuilder");
         log.info("Prototype actor : {}", actor);
         Character copyActor = actor.clone();
         copyActor.setFace("黑色短发");

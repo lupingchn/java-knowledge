@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config>
+    <bean beanName = "masterBuilder" beanClass = "base.design.pattern.builder.director.MasterBuilder"/>
+    <bean beanName = "warriorBuilder" beanClass = "base.design.pattern.builder.director.WarriorBuilder"/>
+</config>

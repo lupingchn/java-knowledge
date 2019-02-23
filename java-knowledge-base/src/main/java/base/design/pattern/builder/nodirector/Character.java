@@ -1,4 +1,4 @@
-package base.design.pattern.builder;
+package base.design.pattern.builder.nodirector;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -205,4 +205,5 @@ public class Character implements Cloneable , Serializable {
         ObjectInputStream ois = new ObjectInputStream(bis);
         return (Character) ois.readObject();
     }
+
 }

@@ -1,10 +1,10 @@
-package base.design.pattern.builder;
+package base.design.pattern.builder.director;
 
 /**
  * Director -- 指挥者 -- 游戏角色创建
  * @author zhangluping on 2018/12/25.
  */
-public class CharacterNoEnhanceDirector {
+public class CharacterDirector {
     /**
      * 逐步构建复杂产品对象
      */
@@ -14,8 +14,8 @@ public class CharacterNoEnhanceDirector {
         characterBuilder.buildSex();
         characterBuilder.buildFace();
         characterBuilder.buildSkinColor();
-        characterBuilder.buildSkills();
         characterBuilder.buildRace();
+        characterBuilder.buildSkills();
         character = characterBuilder.createCharacter();
         return character;
     }

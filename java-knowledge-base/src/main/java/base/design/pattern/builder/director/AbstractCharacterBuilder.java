@@ -1,4 +1,4 @@
-package base.design.pattern.builder;
+package base.design.pattern.builder.director;
 
 /**
  * Builder -- 抽象建造者 -- 角色建造器
@@ -6,7 +6,7 @@ package base.design.pattern.builder;
  * @author zhangluping on 2018/12/25.
  */
 public abstract class AbstractCharacterBuilder {
-    protected Character character = new Character();
+    Character character = new Character();
 
     public abstract void buildClazz();
 

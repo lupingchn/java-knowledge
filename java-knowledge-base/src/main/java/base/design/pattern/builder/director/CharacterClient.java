@@ -1,5 +1,6 @@
-package base.design.pattern.builder;
+package base.design.pattern.builder.director;
 
+import base.design.pattern.util.XMLUtil;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -10,35 +11,33 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CharacterClient {
 
-    public static Character builderWithDirector() {
+    public static Character builderWithDirector(String roleName) {
         // 针对抽象建造者编程
-        AbstractCharacterBuilder characterBuilder = new WarriorBuilder();
+        AbstractCharacterBuilder characterBuilder = (AbstractCharacterBuilder) XMLUtil.getBean(roleName);
         // 指挥者
         CharacterDirector characterDirector = new CharacterDirector();
         //通过指挥者创建完整的建造者对象
         return characterDirector.construct(characterBuilder);
     }
 
-    public static Character builderWithNoEnhance() {
+    public static Character builderWithNoEnhance(String roleName) {
         // 针对抽象建造者编程
-        AbstractCharacterBuilder characterBuilder = new WarriorBuilder();
+        AbstractCharacterBuilder characterBuilder = (AbstractCharacterBuilder) XMLUtil.getBean(roleName);
         // 指挥者
         CharacterNoEnhanceDirector characterDirector = new CharacterNoEnhanceDirector();
         //通过指挥者创建完整的建造者对象
         return characterDirector.construct(characterBuilder);
     }
 
-    private static Character builderWithInnerBuilder() {
-        return Character.builder().clazz("战士").race("兽人").sex("男").face("野兽").skinColor("黑").skill("冲锋").build();
-    }
-
-
     public static void main(String[] args) {
-        Character character = builderWithDirector();
+        Character character = builderWithDirector("warriorBuilder");
         log.info("CharacterDirector ={}", character);
-        character = builderWithNoEnhance();
+        character = builderWithNoEnhance("warriorBuilder");
         log.info("CharacterNoEnhanceDirector ={}", character);
-        character = builderWithInnerBuilder();
-        log.info("InnerBuilder ={}", character);
+
+        character = builderWithDirector("masterBuilder");
+        log.info("CharacterDirector ={}", character);
+        character = builderWithNoEnhance("masterBuilder");
+        log.info("CharacterNoEnhanceDirector ={}", character);
     }
 }
