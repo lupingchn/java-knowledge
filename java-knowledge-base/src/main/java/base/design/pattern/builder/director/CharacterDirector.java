@@ -16,6 +16,7 @@ public class CharacterDirector {
         characterBuilder.buildSkinColor();
         characterBuilder.buildRace();
         characterBuilder.buildSkills();
+        characterBuilder.enhanceByRace();
         character = characterBuilder.createCharacter();
         return character;
     }

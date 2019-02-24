@@ -41,9 +41,15 @@ public class WarriorBuilder extends AbstractCharacterBuilder {
     public void buildSkills() {
         List<String> skills = new ArrayList<>();
         skills.add("冲锋");
+        character.setSkills(skills);
+    }
+
+    @Override
+    public void enhanceByRace() {
+        List<String> skills = new ArrayList<>();
         if (SPECIAL_RACE.equals(character.getRace())) {
             skills.add("力量加成");
         }
-        character.setSkills(skills);
+        character.getSkills().addAll(skills);
     }
 }

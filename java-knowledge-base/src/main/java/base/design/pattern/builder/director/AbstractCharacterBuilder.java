@@ -20,6 +20,7 @@ public abstract class AbstractCharacterBuilder {
 
     public abstract void buildSkills();
 
+    public abstract void enhanceByRace();
     /**
      * 返回一个完整的游戏角色对象
      */

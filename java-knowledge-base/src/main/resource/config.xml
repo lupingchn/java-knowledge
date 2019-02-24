@@ -2,4 +2,6 @@
 <config>
     <bean beanName = "masterBuilder" beanClass = "base.design.pattern.builder.director.MasterBuilder"/>
     <bean beanName = "warriorBuilder" beanClass = "base.design.pattern.builder.director.WarriorBuilder"/>
+    <bean beanName = "cmbcBankAdapter" beanClass = "base.design.pattern.adapter.CmbcBankAdapterImpl"/>
+    <bean beanName = "cebBankAdapter" beanClass = "base.design.pattern.adapter.CebBankAdapterImpl"/>
 </config>
