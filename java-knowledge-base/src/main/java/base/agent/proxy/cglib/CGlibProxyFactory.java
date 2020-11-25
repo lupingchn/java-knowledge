@@ -27,13 +27,13 @@ public class CGlibProxyFactory implements MethodInterceptor {
      */
     public Object getProxyInstance() {
         //1.工具类
-        Enhancer en = new Enhancer();
-        //2.设置父类
-        en.setSuperclass(target.getClass());
+        net.sf.cglib.proxy.Enhancer enhancer = new net.sf.cglib.proxy.Enhancer();
+        //2.设置父类,target为被代理的类
+        enhancer.setSuperclass(target.getClass());
         //3.设置回调函数
-        en.setCallback(this);
+        enhancer.setCallback(this);
         //4.创建子类(代理对象)
-        return en.create();
+        return enhancer.create();
     }
 
     @Override
